@@ -18,17 +18,17 @@ else
         bash $DIR/colored.sh ~/.TODO 2> /dev/null
       else
         case "$2" in
-        "-ff") 
-          echo "$*" | sed "s/-g //" | sed "s/-F /0 /" >> ~/.TODO
+        "-F") 
+          echo "$*" | sed "s/-g /Lucie/" | sed "s/-F /4 /" >> ~/.TODO
         ;;
         "-f") 
-          echo "$*" | sed "s/-g //" | sed "s/-f /1 /" >> ~/.TODO
+          echo "$*" | sed "s/-g //" | sed "s/-f /3 /" >> ~/.TODO
           ;;
         "-i") 
-          echo "$*" | sed "s/-g //" | sed "s/-i /3 /" >> ~/.TODO
+          echo "$*" | sed "s/-g //" | sed "s/-i /1 /" >> ~/.TODO
           ;;
-        "-ii") 
-          echo "$*" | sed "s/-g //" | sed "s/-I /4 /" >> ~/.TODO
+        "-I") 
+          echo "$*" | sed "s/-g //" | sed "s/-I /0 /" >> ~/.TODO
           ;;
         *)
           echo "2 $*" | sed "s/-g //" >> ~/.TODO
@@ -37,28 +37,28 @@ else
       fi
       ;;
     "-F") 
-      echo "$*" | sed "s/-F /0 /" >> .TODO
+      echo "$*" | sed "s/-F /4 /" >> .TODO
       ;;
     "-f") 
-      echo "$*" | sed "s/-f /1 /" >> .TODO
+      echo "$*" | sed "s/-f /3 /" >> .TODO
       ;;
     "-i") 
-      echo "$*" | sed "s/-i /3 /" >> .TODO
+      echo "$*" | sed "s/-i /1 /" >> .TODO
       ;;
     "-I") 
-      echo "$*" | sed "s/-I /4 /" >> .TODO
+      echo "$*" | sed "s/-I /0 /" >> .TODO
       ;;
     "-gF") 
-      echo "$*" | sed "s/-gF /0 /" >> ~/.TODO
+      echo "$*" | sed "s/-gF /4 /" >> ~/.TODO
       ;;
     "-gf") 
-      echo "$*" | sed "s/-gf /1 /" >> ~/.TODO
+      echo "$*" | sed "s/-gf /3 /" >> ~/.TODO
       ;;
     "-gi") 
-      echo "$*" | sed "s/-gi /3 /" >> ~/.TODO
+      echo "$*" | sed "s/-gi /1 /" >> ~/.TODO
       ;;
     "-gI") 
-      echo "$*" | sed "s/-gI /4 /" >> ~/.TODO
+      echo "$*" | sed "s/-gI /0 /" >> ~/.TODO
       ;;
     *)
       echo "2 $*" >> .TODO

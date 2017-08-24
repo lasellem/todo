@@ -1,8 +1,25 @@
 #! /bin/bash  
-sort -r $1 -o $1
+
+#colors
+BLACK='\\\\033[30m'
+RED='\\\\033[31m'
+GREEN='\\\\033[32m'
+YELLOW='\\\\033[33m'
+BLUE='\\\\033[34m'
+PURPLE='\\\\033[35m'
+CYAN='\\\\033[36m'
+WHITE='\\\\033[37m'
+GREY='\\\\033[37m'
+
+sort $1 -o $1
 while read line  
 do
-  echo "$line" | sed "s/4 /\\\\\\\033[31m/" | sed "s/3 /\\\\\\\033[33m/" | sed "s/1 /\\\\\\\033[34m/" | sed "s/0 /\\\\\\\033[35m/" | sed "s/2 //" >> .TODOread  
+  echo "$line" |\
+  sed "s/0 /$RED/" |\
+  sed "s/1 /$YELLOW/" |\
+  sed "s/2 /$GREY/" |\
+  sed "s/3 /$BLUE/" |\
+  sed "s/4 /$PURPLE/" >> .TODOread
 done < $1
 num=0
 while read line  
