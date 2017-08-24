@@ -4,7 +4,8 @@ if [ $# == 0 ]
 then
   if [ -s $PWD/.TODO ]
   then
-    bash ~/Développement/todo/colored.sh $PWD/.TODO 2> /dev/null
+    DIR=$(dirname "$(readlink -f "$0")")
+    bash $DIR/colored.sh $PWD/.TODO 2> /dev/null
   fi
 else
   case "$1" in
@@ -13,7 +14,8 @@ else
       ;;
     "-g")
       if [ -z "$2" ]; then
-        bash ~/Développement/todo/colored.sh ~/.TODO 2> /dev/null
+        DIR=$(dirname "$(readlink -f "$0")")
+        bash $DIR/colored.sh ~/.TODO 2> /dev/null
       else
         case "$2" in
         "-ff") 
